@@ -60,3 +60,24 @@ function logout() {
     document.getElementById('dashboard').classList.add('hidden');
     document.getElementById('authPage').classList.remove('hidden');
                             }
+const toys = [
+    { name: "स्मार्ट रोबोट", price: 1599, image: "images/smart-robot.jpg" },
+    { name: "लेगो सिटी सेट", price: 2999, image: "images/lego-city.jpg" },
+    { name: "डॉल हाउस", price: 1999, image: "images/doll-house.jpg" }
+];
+
+function renderToys() {
+    const toysGrid = document.getElementById('toysGrid');
+    toysGrid.innerHTML = toys.map(toy => `
+        <div class="toy-card">
+            <img src="${toy.image}" class="toy-img" alt="${toy.name}">
+            <div class="toy-info">
+                <h3>${toy.name}</h3>
+                <div class="price">₹${toy.price}</div>
+                <button class="btn"><i class="fas fa-shopping-cart"></i> खरीदें</button>
+            </div>
+        </div>
+    `).join('');
+}
+
+renderToys();
