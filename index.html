@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KidsToyStore - आपकी खिलौना दुकान</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="brand">🎪 KidsToyStore</div>
+        <div id="navUserInfo" class="hidden"></div>
+    </nav>
+
+    <!-- Auth Pages -->
+    <div class="auth-container" id="authPage">
+        <!-- Registration Form -->
+        <div class="auth-box" id="registerBox">
+            <h2>नया अकाउंट बनाएं</h2>
+            <div class="input-group">
+                <input type="text" id="regUsername" placeholder="उपयोगकर्ता नाम">
+            </div>
+            <div class="input-group">
+                <input type="password" id="regPassword" placeholder="पासवर्ड">
+            </div>
+            <button class="btn" onclick="register()">रजिस्टर करें</button>
+            <p>पहले से खाता है? <a href="#" onclick="toggleAuth()">लॉग इन करें</a></p>
+        </div>
+
+        <!-- Login Form -->
+        <div class="auth-box hidden" id="loginBox">
+            <h2>लॉग इन करें</h2>
+            <div class="input-group">
+                <input type="text" id="loginUsername" placeholder="उपयोगकर्ता नाम">
+            </div>
+            <div class="input-group">
+                <input type="password" id="loginPassword" placeholder="पासवर्ड">
+            </div>
+            <button class="btn" onclick="login()">लॉग इन</button>
+            <p>नए यहाँ हैं? <a href="#" onclick="toggleAuth()">रजिस्टर करें</a></p>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="dashboard hidden" id="dashboard">
+        <div class="sidebar">
+            <div class="user-info">
+                <h2 id="welcomeUser"></h2>
+                <button class="btn" onclick="logout()">लॉग आउट</button>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <h2>हमारे खिलौने</h2>
+            <div class="toys-grid" id="toysGrid"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
